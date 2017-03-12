@@ -13,15 +13,15 @@ fdata
 
 # table()
 mons = c("March","April","January","November","January",
-  "September","October","September","November","August",
-  "January","November","November","February","May","August",
-  "July","December","August","August","September","November",
-  "February","April")
+         "September","October","September","November","August",
+         "January","November","November","February","May","August",
+         "July","December","August","August","September","November",
+         "February","April")
 mons = factor(mons)
 table(mons)
 
 mons = factor(mons,levels=c("January","February","March","April","May","June","July","August",
-  "September", "October","November","December"), ordered=TRUE)
+                            "September", "October","November","December"), ordered=TRUE)
 table(mons)
 
 fert = c(10,20,20,50,10,20,10,50,20)
@@ -53,5 +53,19 @@ x[[1]]
 # връщат еднакъв резултат, защото векторът 1 се състои от 1 елемент
 
 # ЗАДАЧА 2
+mtcars[which(mtcars$cyl==8),]
+mean(mtcars[which(mtcars$gear==5),]$mpg)
 
+# ЗАДАЧА 3
+library("MASS")
 
+barplot(table(survey$Sex, survey$Smoke), beside = TRUE, legend = rownames(table(survey$Sex)))
+
+boxplot(survey$Height~survey$Sex)
+boxplot(survey$Height)
+
+hist(survey$Pulse, freq = FALSE, density = 8)
+plot(density(survey$Pulse, na.rm = TRUE))
+
+smokers = table(round(survey$Age[-(which(survey$Smoke=="Never"))]))
+barplot(smokers)
