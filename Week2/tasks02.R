@@ -61,8 +61,20 @@ library("MASS")
 
 barplot(table(survey$Sex, survey$Smoke), beside = TRUE, legend = rownames(table(survey$Sex)))
 
+# median(x) - нарежда цялата статистика по големина и взима стойността точно в средата
+
 boxplot(survey$Height~survey$Sex)
+
 boxplot(survey$Height)
+median(survey$Height[-which(is.na(survey$Height))])
+
+# !! In statistics, an outlier is an observation point that is distant from other observations.
+# това са точките в boxplot-а
+
+
+# ТЕОРИЯ: персентил - ?
+# горен квантил - 3/4
+# долен квантил - 1/4
 
 hist(survey$Pulse, freq = FALSE, density = 8)
 plot(density(survey$Pulse, na.rm = TRUE))
