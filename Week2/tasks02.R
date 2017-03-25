@@ -1,4 +1,5 @@
-# factor()
+# КАТЕГОРИЗАЦИЯ НА ДАННИ
+# factor() - групиране на данните по признак
 data = c(1,2,2,3,1,2,3,3,1,2,3,3,1)
 fdata = factor(data)
 fdata
@@ -11,7 +12,7 @@ levels(fdata) = c('I','II','III')
 fdata
 
 
-# table()
+# table() - сечения между различните фактори
 mons = c("March","April","January","November","January",
          "September","October","September","November","August",
          "January","November","November","February","May","August",
@@ -42,6 +43,24 @@ mylist$d = "New Item" # добавяне на нов елемент
 mylist$b = NULL # премахване на елемент
 
 unlist(mylist) #produce a vector which contains all the atomic components which occur in mylist
+
+# Не се препоръчва да ползваме for, while и рекурсия
+
+# !!!!!! един стринг е 1 елемент, а НЕ лист от char-ове
+
+head(df, n = 3)   # извежда първите n елемента
+tail(df, n = 3)   # извежда последните n елемента
+
+# .RData - разширение, което запазва всичко, заредено в студиото
+# csv - comma-separated values
+
+# scan("Път") - ???? dat,txt,csv,ascii
+
+# setenv() - сетва в R текущата директория, където е R(там е и файла) ???
+
+read.table()
+read.csv()
+read.csv2()
 
 
 # ЗАДАЧА 1
